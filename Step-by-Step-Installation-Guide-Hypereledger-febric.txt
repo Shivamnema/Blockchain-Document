@@ -1,0 +1,34 @@
+Download the Go tar : https://golang.org/dl/
+
+//tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
+(Typically these commands must be run as root or through sudo.)
+
+//sudo nano ~/.bashrc 
+
+Include the following lines at the end of the file
+
+//#GO VARIABLES
+//export GOROOT=/usr/local/go
+//export PATH=$PATH:$GOROOT/bin
+//#END GO VARIABLES
+
+The PATH variable is the environment Path variable.
+ The GOROOT variable defines where are your Go files situated in the system.
+
+To reload the environment variables, we use the following command.
+
+//source ~/.bashrc 
+
+This command gives no output, but just simply reloads all the environment variable in background. Now, we can check the installation of Go in our terminal by typing:
+
+//go 
+
+Go to digitalOccean's Link to install the docker as it is Hyperledger basic prerequisite:
+// https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
+
+Also install the docker-compose along with the above installation through the giving link: 
+// https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04
+
+
+To work with the docker images, you need to add your user to the docker group, which was created during installation of docker-engine as a part of setup.
+sudo usermod -aG docker $(whoami) 
