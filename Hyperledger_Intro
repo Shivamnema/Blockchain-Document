@@ -1,0 +1,57 @@
+//READ : secure multipart computing, homomorphic encryption
+
+hyperledger is enterprise distributed  ledger tech based on BC 
+
+there is no mining in HP
+another consensus algo : PBFT
+
+It's distributed but you can limit the num of operating nodes. 
+
+No operation like delelte or update, everything is inside bc., It's also defines the order of transactions. 
+
+it's permissioned bc. it's a flexiable tech. 
+
+it's not affected by 51% attack.
+
+How hyperledger solves problems: https://www.youtube.com/watch?v=mRLgqMVHZSQ
+
+distributed ledger is enforced by smart contract.
+
+Main Components of HP are fabric CA(certificate authority), peer and Ordering Service.
+
+it uses  docker containers to run. butcan also run on VMs
+
+
+facric ca: it's a high quality tool to enables the security certificate. To generate is called "Enrollment". It makes security easy to implement. it makes certificate root to certify the secuirty.
+
+HP peer : is the place where the BC is stored. the peer is the take the request and response. It endorse and update the ledger. One peer can be part/control multiple channels. All the peers are sycn with each other it is done automatically. 
+
+Ordering Service: it's the heart of consensus mechnism. It creates the blocks. Sent the block the to peers. kafka is production tool.
+
+Channels in HP: completely seprate instance of HP. Peer to be a part of channel must be agreed by other peers in channel.peers can add dynamically additional channels.One peer can part of multiple channels. 
+channel is created by configtx
+.
+
+
+Chaincode: Smart contract in HP is chaincode. It's program to read and update ledger. SDK make transaction and this transaction is doing to execute chaincode. it's currently written in Golang. 
+
+Chaincode must be part of a channel. One chaincode is responsible for working with ledger. Thus it's inside of ledger.  ANd multiple chaincode can be a part of a ledger.
+The chaincode first to be install on each peer using SDKs to before you intiantiate. it will start container of chaincode and then its ready to use. but you intiantiate you need to create policy. Every single channel has different policy.
+
+How exactly Hyperledger Fabric works. Basic workflow of transaction endorsement :
+https://www.youtube.com/watch?v=2_RgCfjunEU
+
+Membership Service Providers (MSP) this is certificate that defines who you are in the network. Every peer needs this type of certificate to define that this peer is part of org. Only peers in one org can see each other using this MSP. 
+Read more about this on the hyperledger documentation. 
+
+
+
+
+
+
+
+
+
+
+
+
